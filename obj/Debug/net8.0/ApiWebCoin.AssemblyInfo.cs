@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiWebCoin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bd395f8dc5c6ea10aa644b2606a3531dd184aa8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b95dcacb70d3e39fd548aa0874f3c737fbd97ce")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiWebCoin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiWebCoin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

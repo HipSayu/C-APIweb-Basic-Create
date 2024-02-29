@@ -15,21 +15,22 @@ namespace ApiWebBasicPlatFrom.services.implements
     public class StudentServices : IStudentServices
     {
         private ApplicationDbContext _context ;
-        public StudentServices (ApplicationDbContext context)  
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public StudentServices (ApplicationDbContext context, IHttpContextAccessor httpContextAccessor)  
         {
             _context = context;
+            _httpContextAccessor = httpContextAccessor;
         }
         public void Create(CreateStudentDto input)
         {
-            //  int currentUserId = CommonUtils.GetCurrentUserId(_httpContextAccessor);
-            if (_context.Students.Any(s => s.StudentCode == input.StudentCode))
-            {
-                throw new UserFriendlyExceptions($"Mã sinh viên \"{input.StudentCode}\" đã tồn tại");
-            }
-            _context.Students.Add(new Entites.Student {
+            
+            _context.Students.Add(new Student {
                 NameStudent = input.NameStudent,
                 Age = input.Age,
-                DateOfBirth = input.DateOfBirth
+                DateOfBirth = input.DateOfBirth,
+                StudentCode = input.StudentCode
+                
+                
             });
             _context.SaveChanges();
         }

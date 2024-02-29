@@ -34,7 +34,7 @@ namespace ApiWebBasicPlatFrom.services.implements
             {
                 throw new NotImplementedException($"Tên tài khoản \"{input.UserName}\" đã tồn tại");
             }
-            _context.Add (new User {
+            _context.Users.Add (new User {
                 UserName = input.UserName,
                 Password = CommonUtils.CreateMD5(input.Password),
                 UserType = input.UserType

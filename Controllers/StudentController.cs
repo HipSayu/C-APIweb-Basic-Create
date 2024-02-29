@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ApiWebBasicPlatFrom.Dtos.Shared;
 using ApiWebBasicPlatFrom.Dtos.Students;
 using ApiWebBasicPlatFrom.services.interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiWebBasicPlatFrom.Controllers
@@ -18,7 +19,8 @@ namespace ApiWebBasicPlatFrom.Controllers
         {
             _studentServices = studentServices ;
         }
-
+        
+        [Authorize]
         [HttpGet("GetStudent")]
         public ActionResult GetStudent (FilterDto input)  {
                 try {
@@ -28,7 +30,7 @@ namespace ApiWebBasicPlatFrom.Controllers
                     return HandleException(ex);
                 }
         }
-
+        [AllowAnonymous]
         [HttpGet("GetStudentById")]
         public ActionResult GetStudentById (int StudentId) {
              try {

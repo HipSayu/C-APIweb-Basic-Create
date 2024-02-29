@@ -11,18 +11,18 @@ namespace ApiWebBasicPlatFrom.Dtos.Students
         
         private string _nameStudent ;
 
-       
-        [MinLength(2, ErrorMessage ="Nhập tối thiểu 2 ký tự")]
         public string NameStudent {
             get => _nameStudent; 
-            set => _nameStudent?.Trim();}
+            set => _nameStudent = value?.Trim();}
 
         private string _studentCode ;
        
-        [MinLength(10, ErrorMessage ="Nhập tối thiểu 2 ký tự")]
+        
         public string StudentCode {
             get => _studentCode; 
-            set => _studentCode?.Trim();}
+            set => _studentCode = value?.Trim();
+        }
+        
         public DateTime DateOfBirth {get; set ;}
         public int Age {get; set ;}
     }

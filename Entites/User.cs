@@ -13,9 +13,9 @@ namespace ApiWebBasicPlatFrom.Entites
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdUser {get; set;}
-        [MinLength(5, ErrorMessage ="Tối thiểu 5 ký tự")]
+        
         public string UserName {get; set;}
-        [MinLength(5, ErrorMessage ="Tối thiểu 5 ký tự")]
+        
         public string Password {get; set;}
 
         public int UserType {get; set;}

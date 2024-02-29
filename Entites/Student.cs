@@ -13,11 +13,11 @@ namespace ApiWebBasicPlatFrom.Entites
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentId {get; set;}
        
-        [MinLength(5)]
+      
         public string NameStudent {get ; set ;}
         public DateTime DateOfBirth {get; set ;}
         
-        [MinLength(10)]
+     
         public string StudentCode {get; set;}
         public int Age {get; set ;}
 
