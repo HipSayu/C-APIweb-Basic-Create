@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebCoin\\ApiWebCoin\\ApiWebCoin.csproj": {}
+    "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj": {}
   },
   "projects": {
-    "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebCoin\\ApiWebCoin\\ApiWebCoin.csproj": {
+    "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebCoin\\ApiWebCoin\\ApiWebCoin.csproj",
+        "projectUniqueName": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj",
         "projectName": "ApiWebCoin",
-        "projectPath": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebCoin\\ApiWebCoin\\ApiWebCoin.csproj",
+        "projectPath": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebCoin\\ApiWebCoin\\obj\\",
+        "outputPath": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
