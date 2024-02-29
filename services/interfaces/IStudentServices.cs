@@ -19,5 +19,7 @@ namespace ApiWebBasicPlatFrom.services.interfaces
         void UpdateStudent (UpdateStudentDto input);
 
         void DeleteStudentById (int StudentId);
+
+        List<StudentDto> GetStudentInClassroom (int ClassroomId);
     }
 }

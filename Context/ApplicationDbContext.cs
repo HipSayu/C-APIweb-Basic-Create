@@ -16,7 +16,9 @@ namespace ApiWebBasicPlatFrom.Context
         //DBset ở đây
             public DbSet<Student> Students { get; set; }
             public DbSet<User> Users {get; set;}
-            
+            public DbSet<Classroom> Classrooms {get; set;}
+            public DbSet<StudentClassroom> studentClassrooms {get; set;}
+
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +33,28 @@ namespace ApiWebBasicPlatFrom.Context
             {
                 entity.ToTable("User");
                 entity.HasKey(s => s.IdUser);
+            });
+
+              modelBuilder.Entity<Classroom>(entity => 
+            {
+                entity.ToTable("Classroom");
+                entity.HasKey(s => s.ClassroomId);
+            });
+            
+            modelBuilder.Entity<StudentClassroom>(entity => 
+            {
+                entity.ToTable("StudentClassroom");
+                entity.HasKey(s => s.IdStudentClassroom);
+
+                entity.HasOne(e => e.student)
+                .WithMany(e => e.studentClassrooms) //navigation
+                .HasForeignKey(e => e.StudentId)
+                .HasConstraintName("FK_StudentClassroom_Student");
+
+                entity.HasOne(e => e.classroom)
+                .WithMany(e => e.studentClassrooms)
+                .HasForeignKey(e => e.ClassroomId)
+                .HasConstraintName("FK_StudentClassroom_Classroom");
             });
         }
     }

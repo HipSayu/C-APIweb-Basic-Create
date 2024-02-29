@@ -20,7 +20,7 @@ namespace ApiWebBasicPlatFrom.Controllers
             _studentServices = studentServices ;
         }
         
-        [Authorize]
+        
         [HttpGet("GetStudent")]
         public ActionResult GetStudent (FilterDto input)  {
                 try {
@@ -65,6 +65,15 @@ namespace ApiWebBasicPlatFrom.Controllers
              try {
                     _studentServices.DeleteStudentById(StudentId);
                     return Ok();
+                }
+                catch (Exception ex){
+                    return HandleException(ex);
+                }
+        }
+        [HttpGet("GetStudentInClassroom")]
+        public ActionResult GetStudentInClassroom (int ClassroomId)  {
+                try {
+                    return Ok(_studentServices.GetStudentInClassroom(ClassroomId));
                 }
                 catch (Exception ex){
                     return HandleException(ex);

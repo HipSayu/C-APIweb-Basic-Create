@@ -9,6 +9,7 @@ using ApiWebBasicPlatFrom.Entites;
 using ApiWebBasicPlatFrom.services.interfaces;
 using ApiWebBasicPlatFrom.Utils;
 using ApiWebCoin.Exceptions;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace ApiWebBasicPlatFrom.services.implements
 {
@@ -95,6 +96,19 @@ namespace ApiWebBasicPlatFrom.services.implements
                 Student.DateOfBirth = input.DateOfBirth ;
                 _context.SaveChanges();
             
+        }
+        public List<StudentDto> GetStudentInClassroom (int ClassroomId)
+        {
+            var result = from student in _context.Students
+                         join sc in _context.studentClassrooms on student.StudentId equals sc.StudentId
+                         where sc.ClassroomId == ClassroomId
+                         select new StudentDto{
+                            NameStudent  = student.NameStudent,
+                            Age = student.Age,
+                            DateOfBirth = student.DateOfBirth,
+                            StudentCode = student.StudentCode
+                         };
+            return result.ToList();
         }
     }
 }

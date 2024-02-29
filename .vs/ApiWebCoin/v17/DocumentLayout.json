@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiWebCoin.csproj|d:\\workspace\\backenddotnet\\apiweb\\apiwebbasicplatfrom\\services\\implements\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiWebCoin.csproj|solutionrelative:services\\implements\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiWebCoin.csproj|d:\\workspace\\backenddotnet\\apiweb\\apiwebbasicplatfrom\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiWebCoin.csproj|solutionrelative:context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiWebCoin.csproj|d:\\workspace\\backenddotnet\\apiweb\\apiwebbasicplatfrom\\services\\interfaces\\iuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiWebCoin.csproj|solutionrelative:services\\interfaces\\iuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiWebCoin.csproj|d:\\workspace\\backenddotnet\\apiweb\\apiwebbasicplatfrom\\entites\\studentclassroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiWebCoin.csproj|solutionrelative:entites\\studentclassroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentClassroom.cs",
+              "DocumentMoniker": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\Entites\\StudentClassroom.cs",
+              "RelativeDocumentMoniker": "Entites\\StudentClassroom.cs",
+              "ToolTip": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\Entites\\StudentClassroom.cs",
+              "RelativeToolTip": "Entites\\StudentClassroom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T16:18:55.008Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -46,13 +71,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IUserServices.cs",
+              "DocumentMoniker": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\services\\interfaces\\IUserServices.cs",
+              "RelativeDocumentMoniker": "services\\interfaces\\IUserServices.cs",
+              "ToolTip": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\services\\interfaces\\IUserServices.cs",
+              "RelativeToolTip": "services\\interfaces\\IUserServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T16:16:42.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserServices.cs",
+              "DocumentMoniker": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\services\\implements\\UserServices.cs",
+              "RelativeDocumentMoniker": "services\\implements\\UserServices.cs",
+              "ToolTip": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\services\\implements\\UserServices.cs",
+              "RelativeToolTip": "services\\implements\\UserServices.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAwDwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T16:16:30.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\Context\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Context\\ApplicationDbContext.cs",
               "ToolTip": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\Context\\ApplicationDbContext.cs",
               "RelativeToolTip": "Context\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAYwBAAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-29T08:36:50.006Z",
               "EditorCaption": ""

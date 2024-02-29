@@ -13,8 +13,7 @@ namespace ApiWebBasicPlatFrom.Entites
         public int ClassroomId {get; set ;}
         
         [Required]
-        [MinLength(10)]
         public string NameClassroom {get; set;}
-
+        public ICollection<StudentClassroom>  studentClassrooms {get; set;}
     }
 }
