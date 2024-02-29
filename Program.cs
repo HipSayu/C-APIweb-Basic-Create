@@ -1,6 +1,8 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using ApiWebBasicPlatFrom.Context;
+using ApiWebBasicPlatFrom.services.implements;
+using ApiWebBasicPlatFrom.services.interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -84,7 +86,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //Add Scoped ở đây
-
+builder.Services.AddScoped<IStudentServices, StudentServices>();
 
 var app = builder.Build();
 
