@@ -15,6 +15,7 @@ namespace ApiWebBasicPlatFrom.Context
         #region 
         //DBset ở đây
             public DbSet<Student> Students { get; set; }
+            public DbSet<User> Users {get; set;}
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,6 +26,11 @@ namespace ApiWebBasicPlatFrom.Context
                 entity.HasKey(s => s.StudentId);
             });
 
+             modelBuilder.Entity<User>(entity => 
+            {
+                entity.ToTable("User");
+                entity.HasKey(s => s.IdUser);
+            });
         }
     }
 }

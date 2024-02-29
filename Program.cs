@@ -15,6 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyDB"));
 });
+            //Hipdz
+            //1AB8A26D5B94FBEF8016115E9E8B152B ~16112003
 
 // Cấu hình JWT
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
@@ -87,6 +89,7 @@ builder.Services.AddSwaggerGen();
 
 //Add Scoped ở đây
 builder.Services.AddScoped<IStudentServices, StudentServices>();
+builder.Services.AddScoped<IUserServices, UserServices>();
 
 var app = builder.Build();
 
