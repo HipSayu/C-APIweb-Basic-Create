@@ -4242,11 +4242,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj",
-      "projectName": "ApiWebCoin",
-      "projectPath": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj",
+      "projectUniqueName": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\ApiBasic.csproj",
+      "projectName": "ApiBasic",
+      "projectPath": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\ApiBasic.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\obj\\",
+      "outputPath": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4270,6 +4270,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj": {}
+    "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\ApiBasic.csproj": {}
   },
   "projects": {
-    "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj": {
+    "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\ApiBasic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj",
-        "projectName": "ApiWebCoin",
-        "projectPath": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj",
+        "projectUniqueName": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\ApiBasic.csproj",
+        "projectName": "ApiBasic",
+        "projectPath": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\ApiBasic.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
         "outputPath": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\obj\\",
         "projectStyle": "PackageReference",
