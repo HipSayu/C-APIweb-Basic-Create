@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MoZv9GjURuSL4bMlVSVpdFX5fVWU/3JLFFsjzP9sJgoKAMEJ86qpQwVJRzhM2fT370BNxO/4dlRWYUkxFZdr6g==",
+  "dgSpecHash": "Qes6coKfOsYOAD3Pex8lZ0UQpmQuRfWwPf3bvQkCPRT9rKGtblBTDCiqMCoaqGrYS71Sh7p4M8h12xX6z82j4A==",
   "success": true,
-  "projectFilePath": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\ApiWebCoin.csproj",
+  "projectFilePath": "D:\\workspace\\BackEndDotNet\\APIWeb\\ApiWebBasicPlatFrom\\ApiBasic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
