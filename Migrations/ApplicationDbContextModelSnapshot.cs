@@ -22,6 +22,24 @@ namespace ApiBasic.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ApiBasic.Entites.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Category", (string)null);
+                });
+
             modelBuilder.Entity("ApiWebBasicPlatFrom.Entites.Classroom", b =>
                 {
                     b.Property<int>("ClassroomId")
@@ -47,6 +65,9 @@ namespace ApiBasic.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("IdCategory")
+                        .HasColumnType("int");
+
                     b.Property<string>("NameProduct")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -62,6 +83,8 @@ namespace ApiBasic.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IdCategory");
 
                     b.HasIndex("NameProduct")
                         .IsUnique();
@@ -141,6 +164,17 @@ namespace ApiBasic.Migrations
                     b.ToTable("User", (string)null);
                 });
 
+            modelBuilder.Entity("ApiWebBasicPlatFrom.Entites.Product", b =>
+                {
+                    b.HasOne("ApiBasic.Entites.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("IdCategory")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("ApiWebBasicPlatFrom.Entites.StudentClassroom", b =>
                 {
                     b.HasOne("ApiWebBasicPlatFrom.Entites.Classroom", "classroom")
@@ -160,6 +194,11 @@ namespace ApiBasic.Migrations
                     b.Navigation("classroom");
 
                     b.Navigation("student");
+                });
+
+            modelBuilder.Entity("ApiBasic.Entites.Category", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("ApiWebBasicPlatFrom.Entites.Classroom", b =>

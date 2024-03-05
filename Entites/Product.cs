@@ -1,3 +1,4 @@
+using ApiBasic.Entites;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,6 +11,8 @@ namespace ApiWebBasicPlatFrom.Entites
     [Table("Product")]
     public class Product
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
         public string ProductID { get; set; }
@@ -19,5 +22,8 @@ namespace ApiWebBasicPlatFrom.Entites
         public int NumberProduct { get; set; }
         [Required]
         public double Price { get; set; }
+
+        public int IdCategory { get; set; }                                                                                                                                                                                                                                                                                                       
+        public Category Category { get; set; }
     }
 }

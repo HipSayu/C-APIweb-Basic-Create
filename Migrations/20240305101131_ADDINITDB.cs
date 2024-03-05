@@ -6,11 +6,24 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ApiBasic.Migrations
 {
     /// <inheritdoc />
-    public partial class ADDInitDB : Migration
+    public partial class ADDINITDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Category",
+                columns: table => new
+                {
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CategoryName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Category", x => x.CategoryId);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Classroom",
                 columns: table => new
@@ -22,22 +35,6 @@ namespace ApiBasic.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Classroom", x => x.ClassroomId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Product",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductID = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NameProduct = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    NumberProduct = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Product", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -72,6 +69,29 @@ namespace ApiBasic.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Product",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductID = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NameProduct = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    NumberProduct = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    IdCategory = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Product", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Product_Category_IdCategory",
+                        column: x => x.IdCategory,
+                        principalTable: "Category",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "StudentClassroom",
                 columns: table => new
                 {
@@ -96,6 +116,11 @@ namespace ApiBasic.Migrations
                         principalColumn: "StudentId",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Product_IdCategory",
+                table: "Product",
+                column: "IdCategory");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Product_NameProduct",
@@ -125,6 +150,9 @@ namespace ApiBasic.Migrations
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "Category");
 
             migrationBuilder.DropTable(
                 name: "Classroom");

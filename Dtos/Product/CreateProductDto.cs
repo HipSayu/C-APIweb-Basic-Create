@@ -35,5 +35,7 @@ namespace ApiWebBasicPlatFrom.Dtos.Product
 
         [Required]
         public double Price { get; set; }
+
+        public int IdCategory { get; set; }
     }
 }

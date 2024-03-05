@@ -1,4 +1,5 @@
-﻿using ApiBasic.Services.Interfaces;
+﻿using ApiBasic.Dtos.Product;
+using ApiBasic.Services.Interfaces;
 using ApiWebBasicPlatFrom.Context;
 using ApiWebBasicPlatFrom.Dtos.Product;
 using ApiWebBasicPlatFrom.Entites;
@@ -28,6 +29,7 @@ namespace ApiBasic.Services.Implements
                     NameProduct = input.NameProduct,
                     NumberProduct = input.NumberProduct,
                     Price = input.Price,
+                    IdCategory = input.IdCategory
                 }
             );
             _context.SaveChanges();
@@ -36,7 +38,7 @@ namespace ApiBasic.Services.Implements
         public void Delete(int id)
         {
             var product = _context.Products.SingleOrDefault(p => p.Id == id);
-            if (product != null)
+            if (product == null)
             {
                 throw new UserFriendlyExceptions($" Product\"{id}\" Không tồn tại");
             }
@@ -44,22 +46,24 @@ namespace ApiBasic.Services.Implements
             _context.SaveChanges();
         }
 
-        public List<ProductDto> GetAllProducts()
+        public List<ProductCategoryDto> GetAllProducts()
         {
-            List<ProductDto> result = new List<ProductDto>();
+            List<ProductCategoryDto> result = new List<ProductCategoryDto>();
             var products = _context
                 .Products.OrderBy(p => p.Price)
                 .ThenByDescending(p => p.NumberProduct);
             foreach (var product in products)
             {
                 result.Add(
-                    new ProductDto
+                    new ProductCategoryDto
                     {
                         Id = product.Id,
                         ProductID = product.ProductID,
                         NameProduct = product.NameProduct,
                         Price = product.Price,
                         NumberProduct = product.NumberProduct,
+                        CategoryName = product.NameProduct,
+                        IdCategory = product.IdCategory,
                     }
                 );
             }
@@ -69,7 +73,7 @@ namespace ApiBasic.Services.Implements
         public ProductDto GetProductById(int id)
         {
             var product = _context.Products.SingleOrDefault(p => p.Id == id);
-            if (product != null)
+            if (product == null)
             {
                 throw new UserFriendlyExceptions($" Product\"{id}\" Không tồn tại");
             }
@@ -144,7 +148,23 @@ namespace ApiBasic.Services.Implements
             product.Price = input.Price;
             product.ProductID = input.ProductID;
             _context.SaveChanges();
-            
+        }
+        public List<ProductCategoryDto> GetProductByCagetogry(string Namecagetogry) 
+        {
+            var result = from category in _context.Categories
+                        join product in _context.Products on category.CategoryId equals product.IdCategory
+                        where category.CategoryName.Equals(Namecagetogry)
+                        select new ProductCategoryDto
+                        {
+                            Id = product.Id,
+                            ProductID = product.ProductID,
+                            IdCategory = product.IdCategory,
+                            CategoryName = category.CategoryName,
+                            NameProduct = product.NameProduct,
+                            NumberProduct = product.NumberProduct,
+                            Price = product.Price,
+                        };
+            return result.ToList();
         }
     }
 }

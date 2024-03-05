@@ -1,11 +1,12 @@
-﻿using ApiWebBasicPlatFrom.Dtos.Product;
+﻿using ApiBasic.Dtos.Product;
+using ApiWebBasicPlatFrom.Dtos.Product;
 using ApiWebBasicPlatFrom.Entites;
 
 namespace ApiBasic.Services.Interfaces
 {
     public interface IProductServices
     {
-        List<ProductDto> GetAllProducts();
+        List<ProductCategoryDto> GetAllProducts();
 
         ProductDto GetProductById(int id);
 
@@ -19,5 +20,9 @@ namespace ApiBasic.Services.Interfaces
 
         List<Product> GetProductsWithSearch(string search);
         List<Product> GetProductsFromTo(double? from, double? to);
+
+        //Querry one to many
+
+        List<ProductCategoryDto> GetProductByCagetogry (string Namecagetogry);
     }
 }

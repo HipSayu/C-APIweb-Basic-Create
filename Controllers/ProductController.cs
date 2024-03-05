@@ -122,5 +122,17 @@ namespace ApiBasic.Controllers
                 return HandleException(ex);
             }
         }
+        [HttpGet("GetProductByCategory")]
+        public ActionResult GetProductByCategory (string categoryName)
+        {
+            try
+            {
+                return Ok(_productServices.GetProductByCagetogry(categoryName));
+            }
+            catch (Exception ex) 
+            {
+                return HandleException(ex);
+            }
+        }
     }
 }
