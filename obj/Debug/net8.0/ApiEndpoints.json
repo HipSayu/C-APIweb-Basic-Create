@@ -1,5 +1,126 @@
 [
   {
+    "ContainingType": "ApiBasic.Controllers.ProductController",
+    "Method": "CreateProduct",
+    "RelativePath": "api/Product/CreateProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "ApiWebBasicPlatFrom.Dtos.Product.CreateProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBasic.Controllers.ProductController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/Product/DeleteProduct",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBasic.Controllers.ProductController",
+    "Method": "GetAllProduct",
+    "RelativePath": "api/Product/GetAllProduct",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBasic.Controllers.ProductController",
+    "Method": "GetProductById",
+    "RelativePath": "api/Product/GetProductById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBasic.Controllers.ProductController",
+    "Method": "GetProductByPriceMax",
+    "RelativePath": "api/Product/GetProductByPrice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "from",
+        "Type": "System.Nullable\u00601[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.Nullable\u00601[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBasic.Controllers.ProductController",
+    "Method": "GetProductByPriceMax",
+    "RelativePath": "api/Product/GetProductByPriceMax",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBasic.Controllers.ProductController",
+    "Method": "GetProductBySearch",
+    "RelativePath": "api/Product/GetProductBySearch",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBasic.Controllers.ProductController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/Product/UpdateProduct",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "ApiWebBasicPlatFrom.Dtos.Product.UpdateProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiWebBasicPlatFrom.Controllers.StudentController",
     "Method": "CreateStudent",
     "RelativePath": "api/Student/CreateStudent",
@@ -59,6 +180,22 @@
   },
   {
     "ContainingType": "ApiWebBasicPlatFrom.Controllers.StudentController",
+    "Method": "GetStudentInClassroom",
+    "RelativePath": "api/Student/GetStudentInClassroom",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ClassroomId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWebBasicPlatFrom.Controllers.StudentController",
     "Method": "StudentDelete",
     "RelativePath": "api/Student/StudentDelete",
     "HttpMethod": "DELETE",
@@ -90,6 +227,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ApiWebBasicPlatFrom.Controllers.UserController",
+    "Method": "CreateUser",
+    "RelativePath": "api/User/CreateUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "ApiWebBasicPlatFrom.Dtos.User.CreateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWebBasicPlatFrom.Controllers.UserController",
+    "Method": "Login",
+    "RelativePath": "api/User/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "ApiWebBasicPlatFrom.Dtos.User.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiWebCoin.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
@@ -99,7 +268,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiWebCoin.WeatherForecast, ApiWebCoin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiWebCoin.WeatherForecast, ApiBasic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -1,5 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using ApiBasic.Services.Implements;
+using ApiBasic.Services.Interfaces;
 using ApiWebBasicPlatFrom.Context;
 using ApiWebBasicPlatFrom.services.implements;
 using ApiWebBasicPlatFrom.services.interfaces;
@@ -90,6 +92,7 @@ builder.Services.AddSwaggerGen();
 //Add Scoped ở đây
 builder.Services.AddScoped<IStudentServices, StudentServices>();
 builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddScoped<IProductServices, ProductService>();
 
 var app = builder.Build();
 

@@ -19,6 +19,8 @@ namespace ApiWebBasicPlatFrom.Context
             public DbSet<Classroom> Classrooms {get; set;}
             public DbSet<StudentClassroom> studentClassrooms {get; set;}
 
+            public DbSet<Product> Products { get; set;}
+
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,7 +31,15 @@ namespace ApiWebBasicPlatFrom.Context
                 entity.HasKey(s => s.StudentId);
             });
 
-             modelBuilder.Entity<User>(entity => 
+            modelBuilder.Entity<Product>(entity =>
+            {
+                entity.ToTable("Product");
+                entity.HasKey(p => p.Id);
+                entity.HasIndex(p => p.NameProduct).IsUnique();
+            });
+
+
+            modelBuilder.Entity<User>(entity => 
             {
                 entity.ToTable("User");
                 entity.HasKey(s => s.IdUser);

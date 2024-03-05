@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="DbContext\**" />
+    <Compile Remove="Entity\**" />
     <Content Remove="DbContext\**" />
+    <Content Remove="Entity\**" />
     <EmbeddedResource Remove="DbContext\**" />
+    <EmbeddedResource Remove="Entity\**" />
     <None Remove="DbContext\**" />
+    <None Remove="Entity\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,9 +34,6 @@
 
   <ItemGroup>
     <Folder Include="Filter\" />
-    <Folder Include="Entity\" />
-    <Folder Include="Services\Interfaces\" />
-    <Folder Include="Services\Implements\" />
   </ItemGroup>
 
 </Project>

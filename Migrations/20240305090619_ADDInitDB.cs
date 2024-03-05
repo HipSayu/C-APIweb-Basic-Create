@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ApiWebCoin.Migrations
+namespace ApiBasic.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDb : Migration
+    public partial class ADDInitDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,6 +22,22 @@ namespace ApiWebCoin.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Classroom", x => x.ClassroomId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Product",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductID = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NameProduct = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    NumberProduct = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Product", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -82,6 +98,12 @@ namespace ApiWebCoin.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Product_NameProduct",
+                table: "Product",
+                column: "NameProduct",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_StudentClassroom_ClassroomId",
                 table: "StudentClassroom",
                 column: "ClassroomId");
@@ -95,6 +117,9 @@ namespace ApiWebCoin.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Product");
+
             migrationBuilder.DropTable(
                 name: "StudentClassroom");
 

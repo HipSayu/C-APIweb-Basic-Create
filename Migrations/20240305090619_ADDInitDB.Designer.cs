@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ApiWebCoin.Migrations
+namespace ApiBasic.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240229164533_InitDb")]
-    partial class InitDb
+    [Migration("20240305090619_ADDInitDB")]
+    partial class ADDInitDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,6 +40,36 @@ namespace ApiWebCoin.Migrations
                     b.HasKey("ClassroomId");
 
                     b.ToTable("Classroom", (string)null);
+                });
+
+            modelBuilder.Entity("ApiWebBasicPlatFrom.Entites.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("NameProduct")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("NumberProduct")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ProductID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NameProduct")
+                        .IsUnique();
+
+                    b.ToTable("Product", (string)null);
                 });
 
             modelBuilder.Entity("ApiWebBasicPlatFrom.Entites.Student", b =>
