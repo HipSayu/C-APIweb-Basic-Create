@@ -19,8 +19,11 @@ namespace ApiWebBasicPlatFrom.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Classroom> Classrooms { get; set; }
         public DbSet<StudentClassroom> studentClassrooms { get; set; }
+
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -76,6 +79,30 @@ namespace ApiWebBasicPlatFrom.Context
                     .HasMany(e => e.Products)
                     .WithOne(e => e.Category)
                     .HasForeignKey(e => e.IdCategory);
+            });
+            modelBuilder.Entity<Order>(entity =>
+            {
+                entity.ToTable("Order");
+                entity.HasKey(e => e.OrdersId);
+            });
+
+            modelBuilder.Entity<OrderDetail>(entity =>
+            {
+                entity.ToTable("OrderDetail");
+                entity.HasKey(e => e.OrderDetailId);
+
+                entity
+                    .HasOne(e => e.Product)
+                    .WithMany(e => e.OrderDetails)
+                    .HasForeignKey(e => e.ProductId)
+                    .HasConstraintName("FK_OrderDetail_Product");
+
+                entity
+                    .HasOne(e => e.Order)
+                    .WithMany(e => e.OrderDetails)
+                    .HasForeignKey(e => e.OrderId)
+                    .HasConstraintName("FK_OrderDetail_Order");
+                    
             });
         }
     }

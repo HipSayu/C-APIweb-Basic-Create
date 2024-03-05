@@ -23,6 +23,9 @@ namespace ApiBasic.Services.Interfaces
 
         //Querry one to many
 
-        List<ProductCategoryDto> GetProductByCagetogry (string Namecagetogry);
+        List<ProductCategoryDto> GetProductByCagetogry(string Namecagetogry);
+
+        //Query many to many
+        List<Product> GetProductInOrder(int OrderId);
     }
 }

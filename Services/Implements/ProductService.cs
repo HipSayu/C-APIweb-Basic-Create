@@ -1,4 +1,5 @@
 ﻿using ApiBasic.Dtos.Product;
+using ApiBasic.Entites;
 using ApiBasic.Services.Interfaces;
 using ApiWebBasicPlatFrom.Context;
 using ApiWebBasicPlatFrom.Dtos.Product;
@@ -149,6 +150,7 @@ namespace ApiBasic.Services.Implements
             product.ProductID = input.ProductID;
             _context.SaveChanges();
         }
+
         public List<ProductCategoryDto> GetProductByCagetogry(string Namecagetogry) 
         {
             var result = from category in _context.Categories
@@ -165,6 +167,16 @@ namespace ApiBasic.Services.Implements
                             Price = product.Price,
                         };
             return result.ToList();
+        }
+
+        public List<Product> GetProductInOrder(int OrderId)
+        {
+            var query = from product in _context.Products
+                        join orderDetail in _context.OrderDetails
+                        on product.Id equals orderDetail.ProductId
+                        where orderDetail.OrderId == OrderId
+                        select product; 
+            return query.ToList();
         }
     }
 }

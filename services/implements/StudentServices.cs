@@ -30,8 +30,6 @@ namespace ApiWebBasicPlatFrom.services.implements
                 Age = input.Age,
                 DateOfBirth = input.DateOfBirth,
                 StudentCode = input.StudentCode
-                
-                
             });
             _context.SaveChanges();
         }

@@ -25,5 +25,7 @@ namespace ApiWebBasicPlatFrom.Entites
 
         public int IdCategory { get; set; }                                                                                                                                                                                                                                                                                                       
         public Category Category { get; set; }
+
+        public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
