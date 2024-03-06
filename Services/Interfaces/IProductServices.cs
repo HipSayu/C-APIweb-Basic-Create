@@ -26,6 +26,10 @@ namespace ApiBasic.Services.Interfaces
         List<ProductCategoryDto> GetProductByCagetogry(string Namecagetogry);
 
         //Query many to many
+        //Lấy những sản phẩm có trong order
         List<Product> GetProductInOrder(int OrderId);
+        //Lấy những sản phẩm giá cao nhất trong order
+        List<ProductDto> GetProductWithPriceMaxInOrder (int OrderId);
+        List<ProductCategoryDto> GetProductWithCategoryInOrder(string CategoryName, int orderId);
     }
 }

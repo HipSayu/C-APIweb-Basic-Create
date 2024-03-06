@@ -134,5 +134,44 @@ namespace ApiBasic.Controllers
                 return HandleException(ex);
             }
         }
+        [HttpGet("GetProductInOrder")]
+        public ActionResult GetProductInOrder(int OrderId)
+        {
+            try
+            {
+                return Ok(_productServices.GetProductInOrder(OrderId));
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
+        [HttpGet("GetProductWithPriceMaxInOrder")]
+        public ActionResult GetProductWithPriceMaxInOrder(int OrderId)
+        {
+            try
+            {
+                return Ok(_productServices.GetProductWithPriceMaxInOrder(OrderId));
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
+        [HttpGet("GetProductWithCategoryInOrder")] 
+        public ActionResult GetProductWithCategoryInOrder(string CatetoryName, int OrderId)
+        {
+            try
+            {
+                return Ok(_productServices.GetProductWithCategoryInOrder(CatetoryName, OrderId));
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
+
+        
+
     }
 }

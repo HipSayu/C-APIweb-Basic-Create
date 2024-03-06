@@ -5,6 +5,7 @@ using ApiWebBasicPlatFrom.Context;
 using ApiWebBasicPlatFrom.Dtos.Product;
 using ApiWebBasicPlatFrom.Entites;
 using ApiWebCoin.Exceptions;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiBasic.Services.Implements
 {
@@ -52,7 +53,7 @@ namespace ApiBasic.Services.Implements
             List<ProductCategoryDto> result = new List<ProductCategoryDto>();
             var products = _context
                 .Products.OrderBy(p => p.Price)
-                .ThenByDescending(p => p.NumberProduct);
+                .ThenByDescending(p => p.NameProduct);
             foreach (var product in products)
             {
                 result.Add(
@@ -140,7 +141,7 @@ namespace ApiBasic.Services.Implements
 
         public void Update(UpdateProductDto input)
         {
-            var product = _context.Products.SingleOrDefault( p => p.Id == input.Id );
+            var product = _context.Products.SingleOrDefault(p => p.Id == input.Id);
             if (product == null)
             {
                 throw new UserFriendlyExceptions($"Không tồn tại product nào có Id là {input.Id}");
@@ -151,32 +152,92 @@ namespace ApiBasic.Services.Implements
             _context.SaveChanges();
         }
 
-        public List<ProductCategoryDto> GetProductByCagetogry(string Namecagetogry) 
+        public List<ProductCategoryDto> GetProductByCagetogry(string Namecagetogry)
         {
-            var result = from category in _context.Categories
-                        join product in _context.Products on category.CategoryId equals product.IdCategory
-                        where category.CategoryName.Equals(Namecagetogry)
-                        select new ProductCategoryDto
-                        {
-                            Id = product.Id,
-                            ProductID = product.ProductID,
-                            IdCategory = product.IdCategory,
-                            CategoryName = category.CategoryName,
-                            NameProduct = product.NameProduct,
-                            NumberProduct = product.NumberProduct,
-                            Price = product.Price,
-                        };
+            var result =
+                from category in _context.Categories
+                join product in _context.Products on category.CategoryId equals product.IdCategory
+                where category.CategoryName.Equals(Namecagetogry)
+                select new ProductCategoryDto
+                {
+                    Id = product.Id,
+                    ProductID = product.ProductID,
+                    IdCategory = product.IdCategory,
+                    CategoryName = category.CategoryName,
+                    NameProduct = product.NameProduct,
+                    NumberProduct = product.NumberProduct,
+                    Price = product.Price,
+                };
             return result.ToList();
         }
 
         public List<Product> GetProductInOrder(int OrderId)
         {
-            var query = from product in _context.Products
-                        join orderDetail in _context.OrderDetails
-                        on product.Id equals orderDetail.ProductId
-                        where orderDetail.OrderId == OrderId
-                        select product; 
+            var query =
+                from product in _context.Products
+                join orderDetail in _context.OrderDetails on product.Id equals orderDetail.ProductId
+                where orderDetail.OrderId == OrderId
+                select product;
             return query.ToList();
+        }
+
+        public List<ProductDto> GetProductWithPriceMaxInOrder(int OrderId)
+        {
+            var query =
+                from product in _context.Products
+                join orderDetail in _context.OrderDetails on product.Id equals orderDetail.ProductId
+                where orderDetail.OrderId == OrderId
+                select product;
+            var PriceMax = query.Max(x => x.Price);
+            var result =
+                from product in _context.Products
+                join orderDetail in _context.OrderDetails on product.Id equals orderDetail.ProductId
+                where orderDetail.OrderId == OrderId && product.Price >= PriceMax
+                select new ProductDto
+                {
+                    Price = product.Price,
+                    NameProduct = product.NameProduct,
+                    NumberProduct = product.NumberProduct,
+                    Id = orderDetail.OrderId,
+                    ProductID = product.ProductID
+                };
+            return result.ToList();
+        }
+
+        public List<ProductCategoryDto> GetProductWithCategoryInOrder(
+            string CategoryName,
+            int OrderId
+        )
+        {
+            var query =
+                from category in _context.Categories
+                join product in _context.Products on category.CategoryId equals product.IdCategory
+                where category.CategoryName == CategoryName
+                select new
+                {
+                    Price = product.Price,
+                    NameProduct = product.NameProduct,
+                    NumberProduct = product.NumberProduct,
+                    ProductID = product.ProductID,
+                    Id = product.Id,
+                    CategoryName = category.CategoryName,
+                    CategoryId = category.CategoryId,
+                };
+            var result =
+                from a in query
+                join orderDetail in _context.OrderDetails on a.Id equals orderDetail.ProductId
+                where orderDetail.OrderId == OrderId
+                select new ProductCategoryDto
+                {
+                    CategoryName = a.CategoryName,
+                    Id = a.Id,
+                    IdCategory = a.CategoryId,
+                    NameProduct = a.NameProduct,
+                    NumberProduct = a.NumberProduct,
+                    Price = a.Price,
+                    ProductID = a.ProductID
+                };
+            return result.ToList();
         }
     }
 }
