@@ -94,6 +94,7 @@ builder.Services.AddScoped<IStudentServices, StudentServices>();
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<IProductServices, ProductService>();
 builder.Services.AddScoped<ICategoryServices, CategoryService>();
+builder.Services.AddScoped<IClassroomServices, ClassroomServices>();
 
 var app = builder.Build();
 

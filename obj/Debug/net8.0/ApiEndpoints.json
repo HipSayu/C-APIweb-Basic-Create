@@ -74,6 +74,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ApiBasic.Controllers.ClassroomController",
+    "Method": "Create",
+    "RelativePath": "api/Classroom/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "ApiWebBasicPlatFrom.Dtos.Classroom.CreateClassroomDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBasic.Controllers.ClassroomController",
+    "Method": "GetAll",
+    "RelativePath": "api/Classroom/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBasic.Controllers.ClassroomController",
+    "Method": "GetById",
+    "RelativePath": "api/Classroom/GetById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ClassroomId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiBasic.Controllers.ClassroomController",
+    "Method": "Update",
+    "RelativePath": "api/Classroom/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "ApiWebBasicPlatFrom.Dtos.Classroom.UpdateClassroomDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiBasic.Controllers.ProductController",
     "Method": "CreateProduct",
     "RelativePath": "api/Product/CreateProduct",
@@ -325,6 +399,22 @@
     "ContainingType": "ApiWebBasicPlatFrom.Controllers.StudentController",
     "Method": "GetStudentInClassroom",
     "RelativePath": "api/Student/GetStudentInClassroom",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ClassroomId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWebBasicPlatFrom.Controllers.StudentController",
+    "Method": "GetStudentWithMaxAgeInClassroom",
+    "RelativePath": "api/Student/GetStudentWithMaxAgeInClassroom",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

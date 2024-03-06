@@ -104,9 +104,33 @@ namespace ApiWebBasicPlatFrom.services.implements
                             NameStudent  = student.NameStudent,
                             Age = student.Age,
                             DateOfBirth = student.DateOfBirth,
-                            StudentCode = student.StudentCode
+                            StudentCode = student.StudentCode,
+                            StudentId = student.StudentId,
                          };
             return result.ToList();
+        }
+        public List<StudentDto> GetStudentWithMaxAgeInClassroom(int ClassroomId)
+        {
+            var query = from student in _context.Students
+                        join studentClassroom in _context.studentClassrooms
+                        on student.StudentId equals studentClassroom.StudentId
+                        where studentClassroom.ClassroomId == ClassroomId
+                        select student;
+            var maxAge = query.Max(x => x.Age);
+            var result = from student in _context.Students
+                         join studentClassroom in _context.studentClassrooms
+                         on student.StudentId equals studentClassroom.StudentId
+                         where studentClassroom.ClassroomId == ClassroomId && maxAge == student.Age
+                         select new StudentDto
+                         {
+                             Age = maxAge,
+                             NameStudent = student.NameStudent,
+                             StudentCode = student.StudentCode,
+                             DateOfBirth = student.DateOfBirth,
+                             StudentId = student.StudentId,
+                         };
+            return result.ToList();
+
         }
     }
 }

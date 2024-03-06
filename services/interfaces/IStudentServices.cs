@@ -21,5 +21,7 @@ namespace ApiWebBasicPlatFrom.services.interfaces
         void DeleteStudentById (int StudentId);
 
         List<StudentDto> GetStudentInClassroom (int ClassroomId);
+
+        List<StudentDto> GetStudentWithMaxAgeInClassroom (int ClassroomId);
     }
 }

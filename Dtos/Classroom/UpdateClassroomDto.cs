@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ApiWebBasicPlatFrom.Dtos.Classroom
 {
-    public class UpdateClassroom : CreateClassroomDto
+    public class UpdateClassroomDto : CreateClassroomDto
     {
         public int ClassroomId {get; set ;}
     }

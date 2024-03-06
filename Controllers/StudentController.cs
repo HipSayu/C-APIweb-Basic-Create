@@ -79,5 +79,17 @@ namespace ApiWebBasicPlatFrom.Controllers
                     return HandleException(ex);
                 }
         }
+        [HttpGet("GetStudentWithMaxAgeInClassroom")]
+        public ActionResult GetStudentWithMaxAgeInClassroom(int ClassroomId)
+        {
+            try
+            {
+                return Ok(_studentServices.GetStudentWithMaxAgeInClassroom(ClassroomId));
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
     }
 }
