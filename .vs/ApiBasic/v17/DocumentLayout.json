@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiBasic.csproj|d:\\workspace\\backenddotnet\\api backend\\apiwebbasicplatfrom\\entites\\classroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiBasic.csproj|solutionrelative:entites\\classroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiBasic.csproj|d:\\workspace\\backenddotnet\\api backend\\apiwebbasicplatfrom\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiBasic.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiBasic.csproj|d:\\workspace\\backenddotnet\\api backend\\apiwebbasicplatfrom\\services\\implements\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiBasic.csproj|solutionrelative:services\\implements\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiBasic.csproj|d:\\workspace\\backenddotnet\\api backend\\apiwebbasicplatfrom\\services\\interfaces\\iproductservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiBasic.csproj|solutionrelative:services\\interfaces\\iproductservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiBasic.csproj|d:\\workspace\\backenddotnet\\api backend\\apiwebbasicplatfrom\\entites\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{646728AE-FB5F-4D20-818B-A6BC70AEBE5E}|ApiBasic.csproj|solutionrelative:entites\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -59,71 +38,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Classroom.cs",
-              "DocumentMoniker": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\Entites\\Classroom.cs",
-              "RelativeDocumentMoniker": "Entites\\Classroom.cs",
-              "ToolTip": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\Entites\\Classroom.cs",
-              "RelativeToolTip": "Entites\\Classroom.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T10:42:25.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
-              "ToolTip": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Controllers\\ProductController.cs",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAAAJgAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T09:59:48.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IProductServices.cs",
-              "DocumentMoniker": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\Services\\Interfaces\\IProductServices.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IProductServices.cs",
-              "ToolTip": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\Services\\Interfaces\\IProductServices.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IProductServices.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBcAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T09:53:22.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\Services\\Implements\\ProductService.cs",
-              "RelativeDocumentMoniker": "Services\\Implements\\ProductService.cs",
-              "ToolTip": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\Services\\Implements\\ProductService.cs",
-              "RelativeToolTip": "Services\\Implements\\ProductService.cs",
-              "ViewState": "AQIAAMQAAAAAAAAAAAAuwNkAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T09:53:17.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Category.cs",
-              "DocumentMoniker": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\Entites\\Category.cs",
-              "RelativeDocumentMoniker": "Entites\\Category.cs",
-              "ToolTip": "D:\\workspace\\BackEndDotNet\\API Backend\\ApiWebBasicPlatFrom\\Entites\\Category.cs",
-              "RelativeToolTip": "Entites\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T03:24:12.279Z",
-              "EditorCaption": ""
             }
           ]
         },

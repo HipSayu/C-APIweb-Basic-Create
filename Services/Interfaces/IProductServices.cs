@@ -30,6 +30,7 @@ namespace ApiBasic.Services.Interfaces
         List<Product> GetProductInOrder(int OrderId);
         //Lấy những sản phẩm giá cao nhất trong order
         List<ProductDto> GetProductWithPriceMaxInOrder (int OrderId);
+        // Lấy nhưng sản phẩm có trong order nhưng theo loại
         List<ProductCategoryDto> GetProductWithCategoryInOrder(string CategoryName, int orderId);
     }
 }
