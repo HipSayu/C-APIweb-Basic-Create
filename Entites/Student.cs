@@ -1,3 +1,4 @@
+using ApiBasic.Entites;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -22,5 +23,6 @@ namespace ApiWebBasicPlatFrom.Entites
         public int Age {get; set ;}
 
         public ICollection<StudentClassroom> studentClassrooms {get; set;}
+        public ICollection<StudentSubject> studentSubjects { get; set;}
     }
 }
